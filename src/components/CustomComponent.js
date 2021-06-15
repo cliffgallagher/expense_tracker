@@ -1,5 +1,5 @@
 function CustomComponent() {
-    return <h2>html goes here</h2>
+    return <h2> test </h2>
 }
 
 export default CustomComponent;
