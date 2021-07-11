@@ -12,6 +12,10 @@ const NewExpense = (props) => {
         setRenderExpenseForm(true);
     }
 
+    const dontRenderExpenseForm = () => {
+        setRenderExpenseForm(false);
+    }
+
     const saveExpenseDataHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
@@ -24,7 +28,7 @@ const NewExpense = (props) => {
     return (
         <div className='new-expense'>
             {!renderExpenseForm && <button onClick={newExpenseButtonHandler}>Add New Expense</button>}
-            {renderExpenseForm && <ExpenseForm onSaveExpenseData={ saveExpenseDataHandler }/>}
+            {renderExpenseForm && <ExpenseForm onSaveExpenseData={ saveExpenseDataHandler } onCancel={dontRenderExpenseForm}/>}
         </div>
 
     );
